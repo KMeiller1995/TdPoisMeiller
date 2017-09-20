@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.meill.dijoncenter.Adapter.DataLieuAdapter;
@@ -27,14 +28,23 @@ public class MainActivity extends AppCompatActivity {
 
     ListView LstLieu;
     ArrayList<Lieu> dataLieux;
+    Button btnCreate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //Bdd
-        //ConnectBDD maCollecDb = new ConnectBDD(this);
-        //SQLiteDatabase db = maCollecDb.getWritableDatabase();
+        ConnectBDD maCollecDb = new ConnectBDD(this);
+        SQLiteDatabase db = maCollecDb.getWritableDatabase();
+
+        btnCreate = (Button) findViewById(R.id.btnCreate);
+        btnCreate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, CreateParcourActivity.class);
+                startActivity(i);
+            };
+        });
 
         LstLieu =(ListView)findViewById(R.id.listLieu);
         LstLieu.setOnItemClickListener(new AdapterView.OnItemClickListener() {

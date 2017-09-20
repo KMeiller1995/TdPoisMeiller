@@ -25,12 +25,11 @@ public class ConnectBDD extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase db) {
         //Table
         db.execSQL("CREATE TABLE Parcours " +
-                "(idParcours Int PRIMARY KEY AUTOINCREMENT," +
+                "(idParcours INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "idLieuCine VARCHAR NOT NULL , " +
                 "idLieuRest VARCHAR NOT NULL , " +
                 "Nom VARCHAR NULL , " +
-                "Date Datetime NULL;");
-
+                "Date DATETIME NULL);");
     }
 
     @Override

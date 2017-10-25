@@ -9,7 +9,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/Null"
             android:textColor="@android:color/holo_blue_dark" />
 
         <TextView
@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Small Text"
+            android:text="@string/Null"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/holo_blue_bright" />
 
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
+        android:text="@string/Null"
         android:id="@+id/textView3"
         android:layout_marginLeft="10dp" />
 
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
+        android:text="@string/Null"
         android:id="@+id/textView4"
         android:layout_marginLeft="10dp" />
 </LinearLayout>

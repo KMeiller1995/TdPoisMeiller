@@ -1,12 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">DijonCenter</string>
-    <string name="title_activity_google_maps" translatable="false">Map</string>
+    <string name="app_name" translatable="false">Sortir à Dijon</string>
+    <string name="title_activity_google_maps" translatable="false">Carte</string>
     <string name="CreateParcours" translatable="false">Crée un Nouveaux Parcours</string>
     <string name="Null" translatable="false">Vide</string>
-    <string name="NbElement" translatable="false">Nombre d élements</string>
+    <string name="NbElement" translatable="false">Nombre d élements chargé: </string>
     <string name="LevelBattery" translatable="false">Atetion niveau de batterie </string>
     <string name="permissionOK" translatable="false">permission ok </string>
     <string name="permissionNO" translatable="false">permission NO </string>
     <string name="receivedMessage" translatable="false">Message Reçu</string>
-    permissionNO
 </resources>

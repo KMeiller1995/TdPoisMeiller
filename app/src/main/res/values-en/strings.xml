@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Activity in Dijon</string>
+    <string name="title_activity_google_maps" translatable="false">Map</string>
+    <string name="CreateParcours" translatable="false">Create new route</string>
+    <string name="Null" translatable="false">Empty</string>
+    <string name="NbElement" translatable="false">Number of items loaded : </string>
+    <string name="LevelBattery" translatable="false">Warning battery Level </string>
+    <string name="permissionOK" translatable="false">permission ok </string>
+    <string name="permissionNO" translatable="false">permission NO </string>
+    <string name="receivedMessage" translatable="false">Message Received</string>
+</resources>

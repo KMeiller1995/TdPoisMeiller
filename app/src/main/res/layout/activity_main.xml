@@ -8,22 +8,43 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.meill.dijoncenter.MainActivity">
+
     <ListView
         android:id="@+id/listLieu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btnCreate" />
+        android:layout_above="@+id/btnCreate"
+        android:layout_below="@+id/textView7" />
 
     <Button
         android:id="@+id/btnCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Crée un Nouveaux Parcours"
+        android:text="@string/CreateParcours"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/NbElement"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/txtnbPoid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/listLieu"
+        android:layout_toEndOf="@+id/textView7"
+        android:layout_toRightOf="@+id/textView7"
+        android:text="@string/Null"
+        android:textStyle="bold|italic" />
 
 
 </RelativeLayout>

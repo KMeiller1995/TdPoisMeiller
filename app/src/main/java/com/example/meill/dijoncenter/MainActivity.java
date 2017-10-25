@@ -1,9 +1,15 @@
 package com.example.meill.dijoncenter;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.os.BatteryManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,17 +17,23 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.meill.dijoncenter.Adapter.DataLieuAdapter;
+import com.example.meill.dijoncenter.Broadcast.Permission;
 import com.example.meill.dijoncenter.Dal.ConnectBDD;
 import com.example.meill.dijoncenter.Dal.ReadJson;
 import com.example.meill.dijoncenter.Models.Lieu;
 
 import org.json.JSONException;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+
+import javax.xml.datatype.Duration;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -29,10 +41,14 @@ public class MainActivity extends AppCompatActivity {
     ListView LstLieu;
     ArrayList<Lieu> dataLieux;
     Button btnCreate;
+    TextView txtnbPoid;
+    Permission p;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        p = new Permission(); p.PermisionReceiveSMS(this);p.PermisionREAD_SMS(this);
 
         //Bdd
         ConnectBDD maCollecDb = new ConnectBDD(this);
@@ -73,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             protected void onPostExecute(ArrayList<Lieu> lieus) {
+                txtnbPoid = (TextView)findViewById(R.id.txtnbPoid);
+                txtnbPoid.setText(""+lieus.size());
                 dataLieux=lieus;
                 //Adapter
                 DataLieuAdapter dl = new DataLieuAdapter(dataLieux,(LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE));
@@ -81,10 +99,11 @@ public class MainActivity extends AppCompatActivity {
         }.execute();
 
 
+    }
 
-
-
-
-
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        p.onRequestPermissionsResult(requestCode,grantResults);
     }
 }
+

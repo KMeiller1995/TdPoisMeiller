@@ -131,14 +131,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         List<Personne> personnes = new ArrayList<Personne>();
+        if(mCursor != null){
+            mCursor.moveToFirst();
+            while (!mCursor.isAfterLast())
+            {
+                Personne personne = cursorToPersonne(mCursor);
+                personnes.add(personne);
+                mCursor.moveToNext();
+            }
+            mCursor.close();
+        } else { Toast.makeText(this , "No Acess Application myhedthmeiller .", Toast.LENGTH_SHORT).show();}
 
-        mCursor.moveToFirst();
-        while (!mCursor.isAfterLast()) {
-            Personne personne = cursorToPersonne(mCursor);
-            personnes.add(personne);
-            mCursor.moveToNext();
-        }
-        mCursor.close();
         return personnes;
     }
 
